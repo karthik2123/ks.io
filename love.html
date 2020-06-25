@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <link rel="stylesheet" type="text/css" href="animate.css">
+<style type="text/css">
+	  body{
+              overflow: hidden;
+                perspective: 1000px;
+                position:absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+      }
+
+      div.box-bottom{
+          background: #db3a65;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height:30%;
+          z-index: 10
+      }
+
+      .block-center {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          left: 50%;
+          animation: hol 3s linear infinite  ;
+      }
+      
+      .block-center div{
+            position: absolute;
+            width: 60px;
+            height: 72px;
+            border-radius: 0;
+            border-radius: 80% 60% 0 0;
+    transform: rotate(-60deg);
+      }
+      .block-center div:after{
+          content: "";
+      }
+      
+      .block-center div:before{
+         content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: inherit;
+        transform: rotate(118deg);
+        border-radius: 50% 80% 0 0;
+        left: 19%;
+        top: 30%;
+          }
+           
+      .h{
+        position: absolute;
+        left: 50%;
+        width: 120px;
+        height: 120px;
+        margin-left: -60px;
+        z-index: 1;
+        margin-top: -60px;
+          animation: h 3s ease infinite alternate;
+      }
+      .h div:first-child{
+        width: 80%;
+        height: 100%;
+        transform: rotate(-47deg);
+        border-radius: 50px 38px 20px 0;
+        position: absolute;
+          background:#db3a65;
+          box-shadow: 10px 0 47px black inset
+      }
+      .h div:last-child{
+          width: 80%;
+        height: 100%;
+        background:#db3a65;
+        transform: rotate(48deg);
+        border-radius: 80px 118px 0 163px;
+        position: absolute;
+        top: 0;
+        right: 0;
+          box-shadow: -10px 0 47px black inset
+      }
+      
+      
+     @keyframes hol{
+          0%{
+              top: 0%;
+              overflow: hidden;
+              transform: rotateX(0deg) 
+          }
+         50%{
+             top: -300px;
+             left: 50%;
+             height: 0;
+             width: 0;
+             transform:  translateX(-50% )  
+         }
+       90%{
+         opacity:1
+       }
+          100%{
+              top: -500px;
+              width: 1000px;
+              height: 500px;
+              transform:  translateX(-50%);
+            opacity:0
+          }
+
+      }
+
+      @keyframes h{
+          0%{
+              transform:scale(.5)
+          }
+          50%{
+             transform:scale(1.5) 
+          }
+           100%{
+             transform:scale(.5) 
+          }
+      }
+      h1{
+      	font-size: 70px;
+      	color: red;
+      	align:center;
+      }
+            h2{
+        font-size: 70px;
+        color:yellow;
+        align:center;
+      }
+      .wow fadeIn {
+  --animate-delay: 5s;
+
+
+}
+.white-mode {
+  text-decoration: none;
+  padding: 7px 10px;
+  background-color: #122;
+  border-radius: 3px;
+  color: #FFF;
+  transition: .35s ease-in-out;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  font-family: "Montserrat";
+}
+
+.white-mode:hover {
+  background-color: #FFF;
+  color: #122;
+}
+    /* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+ 
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+ 
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+ 
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+ 
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+    overflow:hidden;
+    width:100%;
+}
+body {
+  overflow-x: hidden;
+}
+ 
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+ 
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+ 
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #000;
+    color: black;
+}
+ 
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+ 
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+ 
+a svg{
+  transition:all .5s ease;
+ 
+  &:hover{
+    #transform:rotate(180deg);
+  }
+}
+ 
+#ico{
+  display: none;
+}
+ 
+.menu{
+  background: #000;
+  display: none;
+  padding: 5px;
+  width: 320px;
+  @include border-radius(5px);
+ 
+  #transition: all 0.5s ease;
+ 
+  a{
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 10px 2px;
+    margin: 3px 0;
+    text-decoration: none;
+    background: #444;
+ 
+    &:nth-child(1){
+      margin-top: 0;
+      @include border-radius(3px 3px 0 0 );
+    }
+    &:nth-child(5){
+      margin-bottom: 0;
+      @include border-radius(0 0 3px 3px);
+    }
+ 
+    &:hover{
+      background: #555;
+    }
+  }
+}
+.song {
+
+    position: absolute;
+    top: 10%;
+    left: 90%;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-family: "Roboto";
+
+}
+.pause {
+    margin-left: 0.5em;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+      <div class="song">
+    <div style="color: red;" class="title">song for bg</div>
+    <div class="pause" onclick="togglePlay()">🔇</div>
+    <div class="player">
+        <audio class="audio" src="I Wanna Grow Old With You (Westlife) - UP Movie Version.mp3" autoplay type="audio" loop=""></audio>
+        
+        
+        </div>
+</div>
+      <div id="sideNavigation" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="galary.html">Galary</a>
+  <a href="memories.html">Memories</a>
+  <a href="letter.html">Love Letters</a></a>
+  <a href="love.html">Love</a>
+  <a href="conclusion.html">Conclusion </a>
+</div>
+ <nav class="topnav">
+  <a href="#" onclick="openNav()">
+    <svg width="30" height="30" id="icoOpen">
+        <path d="M0,5 30,5" stroke="#ddd" stroke-width="5"/>
+        <path d="M0,14 30,14" stroke="#ddd" stroke-width="5"/>
+        <path d="M0,23 30,23" stroke="#ddd" stroke-width="5"/>
+    </svg>
+  </a>
+</nav>
+ <script type="text/javascript">
+    function openNav() {
+    document.getElementById("sideNavigation").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+ 
+function closeNav() {
+    document.getElementById("sideNavigation").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+ </script>
+ <div class="wow fadeIn">
+<h1 style="text-align:center;">Sara</h1>
+</div>
+ <div class="box-bottom">
+     
+     <div class="h">
+        <div id="h">
+           
+       </div>
+       <div>
+           
+       </div>
+     </div>
+      <div class="hol" id="hol">
+      
+        <div id="center" class="block-center"></div>
+      </div>
+       <h2 style="text-align: center;">i love you</h2>
+   <a target="_blank" href="love1.html" class="white-mode">Next</a>
+</div>
+  </div>
+ 
+  <script type="text/javascript">
+  	var myhol = document.getElementById("hol");
+
+// start function randVal
+function randVal(myVal, other){
+    
+    if(Array.isArray(myVal)){
+        
+        var ranInArray = Math.floor(Math.random() * myVal.length);
+    return myVal[ranInArray];
+        
+        
+    }else{
+        
+        var randnum = Math.floor(Math.random() * myVal);
+        return randnum;
+        
+    }
+    
+    
+}
+// end function randVal
+var color =['#cc3673','#273522','#7c001b','#3a0003','#dbd000','#824275','#eba2a3','#d1003b'],
+    sizebox = [10,15,20,5,12,30,22,34,16],
+
+    myh = document.getElementById("hol"),
+    lV = document.getElementById("h");
+
+
+
+    
+
+
+for(i = 0 ; i < 100 ; i++){
+    for(x = 0 ; x < myh.children.length ; x++){
+         
+            var mypub = document.createElement("div");
+        
+            var size = randVal(sizebox) + "px";
+        
+            mypub.style.backgroundColor = randVal(color) ; 
+        
+            mypub.style.borderColor =  randVal(color) ;
+        
+            mypub.style.width = size  ;
+        
+            mypub.style.height = size  ;
+        
+            mypub.style.left = randVal(100) + "%";
+        
+            mypub.style.top = randVal(100) + "%";
+        
+            myh.children[x].appendChild(mypub);
+        
+    } 
+}
+var ct = document.getElementById("center");
+
+setInterval(function(){
+    lV.style.backgroundColor = randVal(color) ;
+    lV.nextElementSibling.style.backgroundColor = randVal(color) ;
+    
+    for(i = 0 ; i < ct.children.length ; i++){
+        ct.children[i].style.backgroundColor = randVal(color);
+    }
+    
+},2000);
+  </script>
+  <script src="wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+<script type="text/javascript">
+    var pause = document.querySelector(".pause");
+var audio = document.querySelector(".audio");
+
+function togglePlay() {
+    if (audio.paused) {
+        audio.play();
+        pause.innerHTML = "🔇";
+    } else {
+        audio.pause();
+        pause.innerHTML = "🔊";
+        pause.style.color = " #848484";
+    }
+}
+</script>
+</body>
+</html>
